@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
     "add": "npm run build && npm install -g .",
-    "publish": "npm run build && npm publish"
+    "push": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
