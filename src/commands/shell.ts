@@ -21,6 +21,5 @@ Are you sure you want to run: ${options.content}?`,
     console.log("Aborting...");
     return;
   }
-  const output = await executeShellCommand(options.content);
-  console.log(output);
+  await executeShellCommand(options.content);
 }

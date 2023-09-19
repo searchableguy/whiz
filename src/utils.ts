@@ -1,15 +1,29 @@
-import { promisify } from "node:util";
-import { exec } from "node:child_process";
+import { spawn, SpawnOptions } from "child_process";
 import process from "node:process";
 
-const execAsync = promisify(exec);
+export async function executeShellCommand(
+  command: string,
+  options?: SpawnOptions
+): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    const child = spawn(command, {
+      shell: true,
+      stdio: "inherit",
+      ...options, // Merge user-provided options with default options
+    });
 
-export async function executeShellCommand(command: string): Promise<string> {
-  const { stdout, stderr } = await execAsync(`${command} 2>&1`);
-  if (stderr) {
-    throw new Error(stderr);
-  }
-  return stdout.trim();
+    child.on("error", (error) => {
+      reject(error);
+    });
+
+    child.on("close", (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`Command failed with exit code ${code}`));
+      }
+    });
+  });
 }
 
 export const isOpenAiKeyInEnvironment = !!process.env.OPENAI_API_KEY;
