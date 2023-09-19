@@ -3,6 +3,7 @@ import { commands } from "./commands/index.js";
 import { whatCommandToRun } from "./completion.js";
 import { isOpenAiKeyInEnvironment } from "./utils.js";
 import { oraPromise } from "ora";
+
 export async function main(argv: string[]) {
   const [, , ...args] = argv;
   const command = args[0];
@@ -43,6 +44,10 @@ export async function main(argv: string[]) {
     ) {
       const fnCall = choice.message.function_call;
       const execute = commands[fnCall.name];
+      if (!execute) {
+        console.error(`Sorry, I don't know how to do that. Please try again.`);
+        return;
+      }
       const args = JSON.parse(fnCall.arguments);
       return execute(args);
     }

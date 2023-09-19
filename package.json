@@ -1,6 +1,6 @@
 {
   "name": "whiz_cli",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.4-alpha.0",
   "description": "A copilot for your terminal.",
   "main": "index.ts",
   "type": "module",
@@ -8,6 +8,7 @@
   "files": [
     "bin",
     "build",
+    "src",
     "README.md"
   ],
   "scripts": {

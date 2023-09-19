@@ -13,6 +13,7 @@ export async function whatCommandToRun(
         content: `OS: ${process.platform}
         Arch: ${process.arch}
         shell: ${process.env.SHELL?.split("/").pop()}
+        You will only be able to run commands that are available in your shell. You MUST NOT use functions that are not available.
             `,
       },
       ...messages,
