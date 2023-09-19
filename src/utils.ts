@@ -13,3 +13,5 @@ export async function executeShellCommand(command: string): Promise<string> {
 }
 
 export const isOpenAiKeyInEnvironment = !!process.env.OPENAI_API_KEY;
+
+export const whizLLMModel = process.env.WHIZ_LLM_MODEL || "gpt-3.5-turbo";

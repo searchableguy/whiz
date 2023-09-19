@@ -14,6 +14,8 @@ npm install -g whiz_cli
 
 Now, you will need to set `OPENAI_API_KEY` in your environment. You can do this by adding the following to your `.bashrc` or `.zshrc`. On windows, you can set this in the environment variables.
 
+If you want to use a different model than `gpt-3.5-turbo`, then set `WHIZ_LLM_MODEL` to the model name. You can find a list of models [here](https://platform.openai.com/docs/models). As an example, you can set `WHIZ_LLM_MODEL=gpt-4` to use the `gpt-4` model.
+
 ```bash
 export OPENAI_API_KEY=<your key>
 ```

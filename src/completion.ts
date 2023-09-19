@@ -1,12 +1,13 @@
 import OpenAI from "openai";
 import process from "node:process";
+import { whizLLMModel } from "./utils.js";
 
 export async function whatCommandToRun(
   messages: OpenAI.Chat.ChatCompletionMessageParam[]
 ) {
   const openai = new OpenAI();
   const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: whizLLMModel,
     messages: [
       {
         role: "system",
