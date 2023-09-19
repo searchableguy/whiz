@@ -38,10 +38,7 @@ export async function main(argv: string[]) {
   );
 
   for (const choice of response.choices) {
-    if (
-      choice.finish_reason === "function_call" &&
-      choice.message.function_call
-    ) {
+    if (choice.message.function_call) {
       const fnCall = choice.message.function_call;
       const execute = commands[fnCall.name];
       if (!execute) {

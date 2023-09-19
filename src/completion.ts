@@ -40,6 +40,7 @@ You MUST NOT use functions that are not available.`,
         },
       },
     ],
+    function_call: { name: "shell" },
   });
 
   return response;
