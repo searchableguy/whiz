@@ -12,10 +12,9 @@ export async function whatCommandToRun(
       {
         role: "system",
         content: `OS: ${process.platform}
-        Arch: ${process.arch}
-        shell: ${process.env.SHELL?.split("/").pop()}
-        You will only be able to run commands that are available in your shell. You MUST NOT use functions that are not available.
-            `,
+Arch: ${process.arch}
+shell: ${process.env.SHELL?.split("/").pop()}
+You MUST NOT use functions that are not available.`,
       },
       ...messages,
     ],
@@ -30,12 +29,12 @@ export async function whatCommandToRun(
             description: {
               type: "string",
               description:
-                "A description of what this command will do and what it will return. If it will cause any side effects or destruction, please mention them here.",
+                "A description of what this command will do. If it will cause any side effects, highlight with a warning.",
             },
             content: {
               type: "string",
               description:
-                "The shell command to run (e.g. ls -l). Use appropriate command depending on the shell and OS.",
+                "The shell command to run (e.g. ls -l). Use appropriate command based on the shell and OS.",
             },
           },
         },
