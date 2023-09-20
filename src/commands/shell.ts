@@ -2,7 +2,7 @@ import Enquirer from "enquirer";
 import { executeShellCommand } from "../utils.js";
 
 interface ShellOptions {
-  content: string;
+  command: string;
   description: string;
 }
 
@@ -13,7 +13,7 @@ export async function shell(options: ShellOptions) {
     type: "confirm",
     message: `${options.description}
 
-Are you sure you want to run: ${options.content}?`,
+Are you sure you want to run: ${options.command}?`,
     name: "confirm",
   });
 
@@ -21,5 +21,5 @@ Are you sure you want to run: ${options.content}?`,
     console.log("Aborting...");
     return;
   }
-  await executeShellCommand(options.content);
+  await executeShellCommand(options.command);
 }
