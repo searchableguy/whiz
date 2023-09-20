@@ -31,12 +31,13 @@ You MUST NOT use functions that are not available.`,
               description:
                 "A description of what this command will do. If it will cause any side effects, highlight with a warning.",
             },
-            content: {
+            command: {
               type: "string",
               description:
                 "The shell command to run (e.g. ls -l). Use appropriate command based on the shell and OS.",
             },
           },
+          required: ["description", "command"],
         },
       },
     ],
