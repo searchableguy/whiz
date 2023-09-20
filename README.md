@@ -29,6 +29,17 @@ wz open google.com in chrome
 wz list recent github branches sorted by activity
 ```
 
+## Privcacy
+
+Whiz sends the following information to OpenAI:
+
+- Your OS platform (`process.platform`): 'android', 'darwin', 'linux', 'openbsd', or 'win32'.
+- Your CPU architecture (`process.arch`): 'x32', 'x64', 'arm', or 'arm64'.
+- Your shell path (`process.env.SHELL`).
+- Your request, so don't send any sensitive information.
+
+No other environment information, such as filenames or file content, is sent to OpenAI.
+
 ## 🤗 Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
