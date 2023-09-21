@@ -29,7 +29,7 @@ wz open google.com in chrome
 wz list recent github branches sorted by activity
 ```
 
-## Privcacy
+## Privacy
 
 Whiz sends the following information to OpenAI:
 
