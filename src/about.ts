@@ -1,6 +1,6 @@
 import chalk from "chalk";
 
-export const version = "0.0.7-alpha.0";
+export const version = "0.0.8-alpha.0";
 
 export const about = `A copilot for your terminal.
 
